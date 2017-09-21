@@ -1,0 +1,19 @@
+ bigrams = LOAD 's3://cse6242-2017spring-bigrams-big/*' AS
+(bigram:chararray, year:int, occurrences:double, books:double);
+
+data_0 = FILTER bigrams BY (occurrences>=100) and (books>=20);
+
+by_bigram = GROUP data_0 BY bigram;
+data_1 = FOREACH by_bigram GENERATE 
+group as bigram,  
+SUM(data_0.occurrences) as occurrences, 
+SUM(data_0.books) as books; 
+
+
+data_2 = foreach data_1 generate bigram,occurrences/books as avg;
+
+data_3 = ORDER data_2 BY avg DESC, bigram ASC ;
+
+
+limit_data = LIMIT data_3 10; 
+STORE limit_data INTO 's3://cse6242-cyue8/out' USING PigStorage ('\t');

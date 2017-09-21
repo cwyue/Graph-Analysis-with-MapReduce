@@ -1,0 +1,21 @@
+part1: 
+Algorithm	        Training	     Accuracy
+SVM	                weighted	     0.704545	
+SVM	                unweighted	     0.56	
+Boosted Decision Tree	weighted	     0.659091
+Boosted Decision Tree	unweighted	     0.582727	
+
+part2:
+Algorithm	        Training	     Accuracy
+SVM	                weighted	     0.328704	
+SVM	                unweighted	     0.544753	
+Boosted Decision Tree	weighted	     0.714506
+Boosted Decision Tree	unweighted	     0.662037	
+
+part3:
+Algorithm	        Training	     Accuracy
+SVM	                weighted	     0.704545	
+SVM	                unweighted	     0.56	
+Boosted Decision Tree	weighted	     0.662327
+Boosted Decision Tree	unweighted	     0.612727	
+

@@ -1,0 +1,2 @@
+I used "Tune Model Hyperparameters" module to find the optimal configurations for Boosted Decision Tree and used them as the new trained models. 
+It turned out accuracy of weighted and unweighted models slightly increased, because the new trained models fit this dataset better. 

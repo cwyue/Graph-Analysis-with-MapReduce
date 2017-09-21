@@ -1,0 +1,5 @@
+At first I created a dataFrame for this graph (line 19-23). Two dataFrames are created based on the original one and all edges whose edge weights equal 1 are ignored.
+The two dataFrames (line 26-27) record the sum of outgoing and incoming edge weights of each node, respectively. 
+Then I created a full outer join (line 34) between them, with the node id as joinKey. The null value of incoming/outgoing weights are replaced by 0.
+I also used a user defined function (line 30-33) to create a new column of node id. The node id is target_id if source_id is null and is source_id otherwise.
+The final dataFrame (line 25) records the node id and the gross accumulated node weight (i.e., sum(in) - sum(out)).
